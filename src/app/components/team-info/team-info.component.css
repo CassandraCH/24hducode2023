@@ -1,0 +1,46 @@
+.main{
+  margin: 25px 30px;
+}
+
+img{
+  max-width: 200px;
+  margin-top: 0;
+}
+
+mat-card{
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin : 15px;
+}
+
+.inventory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+mat-card-content{
+  margin-top: 0;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caract{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}

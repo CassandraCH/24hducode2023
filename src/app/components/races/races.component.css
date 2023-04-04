@@ -1,0 +1,21 @@
+
+mat-card{
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin : 15px;
+}
+
+.races  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

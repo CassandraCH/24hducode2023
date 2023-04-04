@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+  <progress *ngIf="isLoading" class="loading">Loading...</progress>
+  <div class="content" *ngIf="!isLoading">
+    <h1>Team : {{ourTeam.name}}</h1>
+    <p><b>Portefeuille :</b> {{ourTeam.coin}} coins</p>
+
+    <h2>Caractéristiques du véhicule :</h2>
+    <div class="caract">
+    <p><b>Accéleration : </b>{{vehicle.acceleration}}</p>
+    <p><b>Consommation : </b>{{vehicle.energyConsumption}}</p>
+    <p><b>Adhérence : </b>{{vehicle.grip}}</p>
+    <p><b>Maniabilité : </b>{{vehicle.handlingAbility}}</p>
+    <p><b>Puissance : </b>{{vehicle.power}}</p>
+    <p><b>Usure : </b>{{vehicle.wear}}</p>
+    <p><b>Poids : </b>{{vehicle.weight}}</p>
+    </div>
+
+    <h2>Inventaire :</h2>
+    <div class="inventory">
+      <div *ngFor="let i of iventory">
+        <mat-card>
+          <mat-card-content>
+          <div class="card-header">
+              <h2>{{i.item.name}}</h2>
+              <h3><b>id : </b>{{i.item.id}}</h3>
+          </div>
+
+          <img src="{{i.item.image}}.png" alt="">
+          <p><b>Type :</b> {{i.item.type}}</p>
+          <p><b>Rareté :</b> {{i.item.rarity}}</p>
+          <p><b>Prix de vente :</b> {{i.item.sellingPrice}} coins</p>
+            <p><b>Statistiques :</b></p>
+          <div *ngFor="let stat of i.item.statistiques">
+            <div class="stats">
+            <p>{{stat.type}}</p>
+            <p>{{stat.value}}</p>
+            </div>
+          </div>
+            <p><b>Equipé : </b>{{i.isEquipped}}</p>
+            <mat-card-actions>
+              <button [disabled]="i.isEquipped" mat-raised-button color="primary" (click)="setEquipement(i.item.id)">Equiper</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+</div>

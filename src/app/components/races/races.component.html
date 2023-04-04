@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<progress *ngIf="isLoading" class="loading">Loading...</progress>
+<div class="content" *ngIf="!isLoading">
+<div style="display: flex;
+  justify-content: center;
+margin-top: 1em;">
+  <button mat-raised-button color="primary" (click)="runAllRaces()" style="margin-right: 1em;">Participer à toutes les courses</button>
+</div>
+
+
+<div class="races">
+    <div *ngFor="let race of raceList">
+      <mat-card>
+        <mat-card-content>
+        <div class="card-header">
+          <h2>{{race.name}}</h2>
+          <h3><b>Numéro : </b>{{race.id}}</h3>
+        </div>
+            <img mat-card-lg-image src="./assets/races/{{race.image}}.svg" >
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [id]="race.id" (click)="getMedalFromRace(race.id)" style="margin-right: 1em;">Médaille obtenue</button>
+          <button mat-raised-button color="accent" [id]="race.id" (click)="participerCourse(race.id)">Participer à {{race.id}}</button>
+        </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+</div>
+</div>
+</div>

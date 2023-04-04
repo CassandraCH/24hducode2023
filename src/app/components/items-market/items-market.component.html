@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+  <progress *ngIf="isLoading" class="loading">Loading...</progress>
+  <div class="content" *ngIf="!isLoading">
+    <div class="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Rareté</mat-label>
+        <mat-select [(ngModel)]="selected" (ngModelChange)="onSelect()">
+          <mat-option *ngFor="let rarete of raretes" [value]="rarete">
+            {{rarete}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="warn" (click)="removeFilter()">Réinitialiser</button>
+
+    </div>
+
+    <div class="market">
+        <div *ngFor="let item of itemsCopy" >
+          <mat-card>
+            <mat-card-content>
+            <div class="card-header">
+              <h2>{{item.name}}</h2>
+              <h3><b>id : </b>{{item.sellingPrice}} coins</h3>
+            </div>
+
+              <img mat-card-md-image src="{{item.image}}.png"  alt="">
+              <p>
+               <b>Rareté :</b> {{item.rarity}}
+              </p>
+              <p>
+                <b>Type :</b> {{item.type}}
+              </p>
+              <p><b>Statut :</b> {{item.statut}} </p>
+              <mat-divider></mat-divider>
+              <p><b>Caractéristiques :</b></p>
+                <div *ngFor="let itemStat of item.statistiques">
+                  <div class="stats">
+                    <p><b>{{itemStat.type}} : </b></p>
+                    <p>{{itemStat.value}}</p>
+                  </div>
+                </div>
+            <mat-card-actions>
+              <div class="buttons">
+                  <button mat-raised-button color="primary" (click)="vendreItemMarketplace(item.id)">Vente market</button>
+                  <button mat-raised-button color="primary" (click)="vendreItemTeams(item.id)" >Vente teams</button>
+                  <button mat-raised-button color="warn" (click)="acheterItem(item.id)">Acheter</button>
+              </div>
+            </mat-card-actions>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+    </div>
+  </div>
+</div>

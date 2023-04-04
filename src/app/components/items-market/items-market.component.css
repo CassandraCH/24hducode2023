@@ -1,0 +1,61 @@
+.main{
+  margin: 25px 30px;
+}
+
+.form{
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card{
+  width: 380px;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  margin : 15px;
+  padding: 0px 50px;
+}
+
+.market {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+mat-card-content{
+  margin-top: 0;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 340px;
+}
+
+button{
+  margin: 5px;
+  height: 50px;
+}

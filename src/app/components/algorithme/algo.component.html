@@ -1,0 +1,61 @@
+
+
+
+<div>
+    <table css="times">
+      <tr>
+        <th> Course </th>
+        <th> Acceleration </th>
+        <th> Energy Consumption </th>
+        <th> Grip </th>
+        <th> Handling Ability </th>
+        <th> Power </th>
+        <th> Wear </th>
+        <th> Weight </th>
+        <th> Straight </th>
+        <th> Time Official </th>
+        <th> Time Calculated </th>
+        <th> Ecart </th>
+      </tr>
+      <tr *ngFor="let time of times">
+        <td>
+          {{time.race.name}}
+        </td>
+        <td>
+          {{time.stats.acceleration}}
+        </td>
+        <td>
+          {{time.stats.energyConsumption}}
+        </td>
+        <td>
+          {{time.stats.grip}}
+        </td>
+        <td>
+          {{time.stats.handlingAbility}}
+        </td>
+        <td>
+          {{time.stats.power}}
+        </td>
+        <td>
+          {{time.stats.wear}}
+        </td>
+        <td>
+          {{time.stats.weight}}
+        </td>
+        <td>
+          {{time.race.straight}}
+        </td>
+        <td>
+          {{time.time}}
+        </td>
+        <td>
+          {{time.timeCalculated | number : '1.0-0'}}
+        </td>
+        <td>
+          {{time.timeCalculated - time.time | number : '1.0-0'}}
+        </td>
+      </tr>
+    </table>
+    
+  </div>
+  

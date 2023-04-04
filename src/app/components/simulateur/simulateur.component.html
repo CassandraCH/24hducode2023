@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="content">
+  <h1>Choix du véhicule :</h1>
+  <div class="choice">
+    <table>
+      <tr><th>Voiture 1</th><td></td></tr>
+      <tr><td>Puissance = 1</td><td></td></tr>
+      <tr><td>Accélération = 1</td><td></td></tr>
+      <tr><td>Adhérence = 1</td><td><input type="radio" name="choixvoiture" id="voiture1" [(ngModel)]=voiture value="voiture1" checked/></td></tr>
+      <tr><td>Maniabilité = 1</td><td></td></tr>
+      <tr><td>Poids = 100</td><td></td></tr>
+      <tr><td>Usure = 0</td><td></td></tr>
+      <tr><td>Consommation = 0</td><td></td></tr>
+    </table>
+
+  <table>
+    <tr><th>Voiture 2</th><td></td></tr>
+    <tr><td>Puissance = 60</td><td></td></tr>
+    <tr><td>Accélération = 60</td><td></td></tr>
+    <tr><td>Adhérence = 60</td><td><input type="radio" name="choixvoiture" id="voiture2" [(ngModel)]=voiture value="voiture2"/></td></tr>
+    <tr><td>Maniabilité = 60</td><td></td></tr>
+    <tr><td>Poids = 0</td><td></td></tr>
+    <tr><td>Usure = 0</td><td></td></tr>
+    <tr><td>Consommation = 0</td><td></td></tr>
+  </table>
+
+  </div>
+<div>
+  <div class="form">
+    <div class="numero">
+      <mat-form-field class="example-full-width">
+        <mat-label>Numéro de circuit</mat-label>
+        <input matInput placeholder="1" value="1" [(ngModel)]=circuitid>
+      </mat-form-field>
+    </div>
+    <button (click)="courrir()" mat-raised-button color="primary">Let's go</button>
+    <mat-form-field class="example-full-width result">
+      <mat-label>Résultat (en secondes) </mat-label>
+      <input matInput placeholder="1" value="1" [(ngModel)]=resultat [disabled]="true">
+    </mat-form-field>
+</div>
+</div>
